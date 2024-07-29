@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using NUnit.Framework;
 using OpenCTM;
@@ -16,14 +15,14 @@ namespace CtmTests
 			MemoryStream memory = new MemoryStream();
 			CtmOutputStream outS = new CtmOutputStream(memory);
 			outS.writeCompressedData(data);
-			
+
 			//read
 			memory.Seek(0, SeekOrigin.Begin);
 			Stream readMemory = new MemoryStream(memory.ToArray());
 			CtmInputStream inS = new CtmInputStream(readMemory);
-			
-			Assert.AreEqual(data, inS.readCompressedData(data.Length));
-			Assert.AreEqual(memory.Length, readMemory.Position);
+
+			Assert.Equals(data, inS.readCompressedData(data.Length));
+			Assert.Equals(memory.Length, readMemory.Position);
 		}
 	}
 }
