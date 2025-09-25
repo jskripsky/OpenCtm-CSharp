@@ -6,6 +6,6 @@
     <Copyright>Daniel Heinrich</Copyright>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LZMA\Lzma.csproj"/>
+    <PackageReference Include="LZMA-SDK" Version="22.1.1" />
   </ItemGroup>
 </Project>
